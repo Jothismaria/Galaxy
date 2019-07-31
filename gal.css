@@ -1,0 +1,26 @@
+body {
+    
+}
+
+canvas{
+    width: 95vw;
+    height: 50vh;
+}
+
+div.source{
+    padding: 20px 0;
+}
+
+div.settings{
+    display: flex;
+    flex-direction: column;
+}
+
+div.settings > div {
+    display: flex;
+    justify-content: space-between;
+}
+
+div.settings > div > input {
+    width: 60%;
+}

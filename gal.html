@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Page Title</title>
+        <!--
+        Based on codes from
+        https://www.dwitter.net/d/13326
+        https://www.dwitter.net/d/13325
+        
+        added settings controls
+        -->
+    </head>
+    <body>
+        <div class="control">
+            <div>
+                <label>Animation</label>
+                <select onchange="change(this.options[this.selectedIndex].value)">
+                    <option value="black-hole">Black Hole</option>
+                    <option value="galaxy">Galaxy</option>
+                    <option value="cone">Cone</option>
+                    <option value="surprise">Surprise</option>
+                </select>
+            </div>
+            <div class="settings">
+                <div>
+                    <label>Direction</label>
+                    <label id="direction-label"></label>
+                    <input class="range" type="range" min="0" max="1" value="1" oninput="changeSettings('direction', Number(this.value) ? 1 : -1)" />
+                </div>
+                <div>
+                    <label>Angle</label>
+                    <label id="angle-label"></label>
+                    <input class="range" type="range" min="-100" max="100" value="2" oninput="changeSettings('angle', this.value * 0.1)" />
+                </div>
+                <div>
+                    <label>Speed</label>
+                    <label id="speed-label"></label>
+                    <input class="range" type="range" min="-300" max="300" value="300" oninput="changeSettings('speed', this.value)" />
+                </div>
+                <div>
+                    <label>Particle Size</label>
+                    <label id="particleSize-label"></label>
+                    <input class="range" type="range" min="1" max="30" value="9" oninput="changeSettings('particleSize', this.value)" />
+                </div>
+                <div>
+                    <label>Diameter</label>
+                    <label id="diameter-label"></label>
+                    <input class="range" type="range" min="1" max="5000" value="2000" oninput="changeSettings('diameter', this.value)" />
+                </div>
+                <div>
+                    <label>Zoom</label>
+                    <input class="range" type="range" min="250" max="5000" value="1920" oninput="zoom(this.value)" />
+                </div>
+            </div>
+        </div>
+        <div class="source">
+            <a id="source" />
+        </div>
+        <canvas id="canvas" />
+    </body>
+</html>
